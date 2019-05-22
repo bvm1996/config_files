@@ -56,10 +56,10 @@ export PYTHONPATH="/home/vladimir/PKI/pkit/src:$PYTHONPATH"
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 source /home/vladimir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias pkit='cd /home/vladimir/PKI/pkit/'
-alias penv='. /home/vladimir/PKI/pkivenv/bin/activate'
+alias pkit='cd /home/vladimir/PKI/pkit/; . /home/vladimir/PKI/pkivenv/bin/activate'
+# alias penv='. /home/vladimir/PKI/pkivenv/bin/activate'
 
-alias webt='cd /home/vladimir/PKI/pkit-webui-tests/'
+alias webt='cd /home/vladimir/PKI/pkit-webui-tests/; . /home/vladimir/PKI/webui_test_venv/bin/activate'
 alias wenv='. /home/vladimir/PKI/webui_test_venv/bin/activate'
 
 alias -g g='| grep'
@@ -76,3 +76,9 @@ export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # bindkey -v
 
 setopt autocd
+
+# vim as default editor
+export EDITOR=$(which vim)
+export VISUAL=$(which vim)
+
+
