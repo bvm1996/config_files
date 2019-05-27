@@ -62,7 +62,14 @@ alias pkit='cd /home/vladimir/PKI/pkit/; . /home/vladimir/PKI/pkivenv/bin/activa
 alias webt='cd /home/vladimir/PKI/pkit-webui-tests/; . /home/vladimir/PKI/webui_test_venv/bin/activate'
 alias wenv='. /home/vladimir/PKI/webui_test_venv/bin/activate'
 
+alias clipki='cd /home/vladimir/PKI/clipki/; . /home/vladimir/PKI/2-venv-clipki/bin/activate'
+# alias wenv='. /home/vladimir/PKI/webui_test_venv/bin/activate'
+
+alias cryptokey-rpc='cd /home/vladimir/PKI/cryptokey-rpc/; . /home/vladimir/PKI/venv_cryptokey/bin/activate'
+
 alias -g g='| grep'
+
+alias gst='git status'
 
 export OPENSSL_CONF=/etc/ssl/openssl_custom.cnf
 
@@ -81,4 +88,4 @@ setopt autocd
 export EDITOR=$(which vim)
 export VISUAL=$(which vim)
 
-
+bindkey -e
