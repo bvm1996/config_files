@@ -1,0 +1,10 @@
+[user]
+    name = Vladimir Bobrov
+    email = bobrov@rnd.stcnet.ru
+[alias]
+	graph = log --graph --date-order --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date=short
+	review = push gerrit 6adcd7e8:refs/for/master
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
