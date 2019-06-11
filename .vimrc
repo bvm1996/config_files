@@ -92,9 +92,14 @@ map <C-l> <C-W>l
 " macros for import sorting
 nmap <leader>ss :set lazyredraw<CR>vip:sort u<CR>:'<,'>sort i<CR>:set nolazyredraw<CR>
 " macros for pdb insert
-nmap <leader>pdb  iimport pdb; pdb set_trace()<CR>pass<ESC>
+nmap <leader>pdb :set lazyredraw<CR> oimport pdb; pdb.set_trace()<CR>pass<ESC>:set nolazyredraw<CR>
+
 " macros for bad whitespace erase
 nmap <leader>ee :EraseBadWhitespace<CR>
+" insert \n
+nmap <leader>nn i<CR><ESC>
+" insert \n at the beginnig of a line
+nmap <leader>NN I<CR><ESC>
 
 " place swap-files to some directory
 set backupdir=.backup/,~/.backup/,/tmp//
@@ -119,7 +124,7 @@ execute pathogen#infect()
 set foldmethod=indent
 set foldlevel=99
 
-" folding with space
+" folding with tab + space
 nnoremap <Tab><space> za
 
 " show docs for folded stuff
@@ -252,3 +257,31 @@ hi SignifySignChange cterm=bold ctermbg=none  ctermfg=Blue
 
 " disable lint by default
 let g:pymode_lint = 0
+
+" splits function arguments into multiple lines
+function! DefsplitFun()
+	let line = getline('.')
+	let line = join(split(line, "(")[1:-1], "(")
+	let lines = split(line, ")")
+	let line = join(lines[0:len(lines) - 2], ')')
+	let lines = split(line, ', ')
+	execute "normal! ^f(ci(\<enter>\<tab>".join(lines, ",\<enter>\<tab>").",\<enter>\<esc>"
+endfunction
+
+command Defsplit call DefsplitFun()
+
+" open new tab
+nnoremap <silent> <leader>tt :$tabnew<CR>
+
+" numbered tabs
+" (does not work because of another plugin)
+let g:taboo_tab_format = " tab:%N%m "
+
+" hotkeys for choosing tab by number
+" (which is not actually displayed anywhere right now)
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+
