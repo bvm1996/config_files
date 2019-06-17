@@ -50,22 +50,9 @@ alias egrep='egrep --color=auto'
 
 # added postgresql10 to path
 export PATH="/usr/lib/postgresql/10/bin:$PATH"
-# added src of "pkit" project to path
-export PYTHONPATH="/home/vladimir/PKI/pkit/src:$PYTHONPATH"
 
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
-source /home/vladimir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-alias pkit='cd /home/vladimir/PKI/pkit/; . /home/vladimir/PKI/pkivenv/bin/activate'
-# alias penv='. /home/vladimir/PKI/pkivenv/bin/activate'
-
-alias webt='cd /home/vladimir/PKI/pkit-webui-tests/; . /home/vladimir/PKI/webui_test_venv/bin/activate'
-alias wenv='. /home/vladimir/PKI/webui_test_venv/bin/activate'
-
-alias clipki='cd /home/vladimir/PKI/clipki/; . /home/vladimir/PKI/2-venv-clipki/bin/activate'
-# alias wenv='. /home/vladimir/PKI/webui_test_venv/bin/activate'
-
-alias cryptokey-rpc='cd /home/vladimir/PKI/cryptokey-rpc/; . /home/vladimir/PKI/venv_cryptokey/bin/activate'
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias -g g='| grep'
 
