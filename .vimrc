@@ -263,9 +263,9 @@ function! DefsplitFun()
 	let line = getline('.')
 	let line = join(split(line, "(")[1:-1], "(")
 	let lines = split(line, ")")
-	let line = join(lines[0:len(lines) - 2], ')')
+	let line = join(lines[0:len(lines) - 2], ")")
 	let lines = split(line, ', ')
-	execute "normal! ^f(ci(\<enter>\<tab>".join(lines, ",\<enter>\<tab>").",\<enter>\<esc>"
+	execute "normal! ^f(ci(\<enter>\<tab>\<tab>".join(lines, ",\<enter>\<tab>\<tab>").",\<enter>\<esc>"
 endfunction
 
 command Defsplit call DefsplitFun()
@@ -275,7 +275,9 @@ nnoremap <silent> <leader>tt :$tabnew<CR>
 
 " numbered tabs
 " (does not work because of another plugin)
-let g:taboo_tab_format = " tab:%N%m "
+" (hmm, it works but looks kinda ugly, so I disabled it, by deleting
+" taboo.vim) (though tab number is probably useful thing)
+" let g:taboo_tab_format = " tab:%N%m "
 
 " hotkeys for choosing tab by number
 " (which is not actually displayed anywhere right now)
@@ -284,4 +286,3 @@ nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
-
