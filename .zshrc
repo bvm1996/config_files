@@ -58,6 +58,8 @@ alias -g g='| grep'
 
 alias gst='git status'
 
+alias diff='diff --color=auto'
+
 export OPENSSL_CONF=/etc/ssl/openssl_custom.cnf
 
 # powerline custom elements
@@ -66,8 +68,6 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ssh dir_writable root_indicato
 # powerline promt to newline
 export POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
-# # enable vi-mode
-# bindkey -v
 
 setopt autocd
 
@@ -75,4 +75,5 @@ setopt autocd
 export EDITOR=$(which vim)
 export VISUAL=$(which vim)
 
+# enable emacs-mode
 bindkey -e

@@ -113,8 +113,8 @@ set tags=tags
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 
 " delete into nothingness
-map <leader>D "_d
-map <leader>DD "_dd
+" map <leader>D "_d
+" map <leader>DD "_dd
 
 " enable plugins
 call pathogen#helptags()
@@ -183,12 +183,12 @@ map <C-q> :bd<CR>
 
 " при переходе за границу в 80 символов в Ruby/Python/js/C/C++ подсвечиваем на темном фоне текст
 "(does not work, but do I really need it? That is a question)
-augroup vimrc_autocmds
-    autocmd!
-    autocmd FileType ruby,python,javascript,c,cpp highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType ruby,python,javascript,c,cpp match Excess /\%80v.*/
-    autocmd FileType ruby,python,javascript,c,cpp set nowrap
-augroup END
+" augroup vimrc_autocmds
+"     autocmd!
+"     autocmd FileType ruby,python,javascript,c,cpp highlight Excess ctermbg=DarkGrey guibg=Black
+"     autocmd FileType ruby,python,javascript,c,cpp match Excess /\%80v.*/
+"     autocmd FileType ruby,python,javascript,c,cpp set nowrap
+" augroup END
 
 " not sure if it is even needed
 if has("gui_running")
@@ -265,7 +265,7 @@ function! DefsplitFun()
 	let lines = split(line, ")")
 	let line = join(lines[0:len(lines) - 2], ")")
 	let lines = split(line, ', ')
-	execute "normal! ^f(ci(\<enter>\<tab>\<tab>".join(lines, ",\<enter>\<tab>\<tab>").",\<enter>\<esc>"
+	execute "normal! ^f(ci(\<enter>\<tab>".join(lines, ",\<enter>\<tab>").",\<enter>\<esc>"
 endfunction
 
 command Defsplit call DefsplitFun()
@@ -286,3 +286,31 @@ nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+
+autocmd Filetype html setlocal ts=4 sw=4 sts=0 expandtab
+
+" translation
+vmap <leader>T <Plug>Translate
+vmap <leader>R <Plug>TranslateReplace
+vmap <leader>P <Plug>TranslateSpeak
+
+let g:translate_cmd="trans :ru"
+
+" Mimic Emacs Line Editing in Insert Mode Only
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+" â is <Alt-B>
+inoremap â <C-Left>
+" æ is <Alt-F>
+inoremap æ <C-Right>
+inoremap <C-K> <Esc>lDa
+inoremap <C-U> <Esc>d0xi
+inoremap <C-Y> <Esc>Pa
+inoremap <C-X><C-S> <Esc>:w<CR>a
+inoremap <M-f> <Esc>lwi
