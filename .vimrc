@@ -329,3 +329,6 @@ onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>
 " delete in last parantheses
 onoremap il( :<c-u>normal! F)vi(<cr>
+
+" display kitten on sourcing .vimrc
+echo '>^.^<'
