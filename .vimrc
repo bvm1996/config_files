@@ -314,7 +314,6 @@ inoremap â <C-Left>
 inoremap æ <C-Right>
 inoremap <C-K> <Esc>lDa
 inoremap <C-U> <Esc>d0xi
-inoremap <C-Y> <Esc>Pa
 inoremap <C-X><C-S> <Esc>:w<CR>a
 inoremap <M-f> <Esc>lwi
 
