@@ -84,22 +84,22 @@ set colorcolumn=80
 hi ColorColumn ctermbg=Red
 
 " mapping for navigation  between panes
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 " macros for import sorting
-nmap <leader>ss :set lazyredraw<CR>vip:sort u<CR>:'<,'>sort i<CR>:set nolazyredraw<CR>
+nnoremap <leader>ss :set lazyredraw<CR>vip:sort u<CR>:'<,'>sort i<CR>:set nolazyredraw<CR>
 " macros for pdb insert
-nmap <leader>pdb :set lazyredraw<CR> oimport pdb; pdb.set_trace()<CR>pass<ESC>:set nolazyredraw<CR>
+nnoremap <leader>pdb :set lazyredraw<CR> oimport pdb; pdb.set_trace()<CR>pass<ESC>:set nolazyredraw<CR>
 
 " macros for bad whitespace erase
-nmap <leader>ee :EraseBadWhitespace<CR>
+nnoremap <leader>ee :EraseBadWhitespace<CR>
 " insert \n
-nmap <leader>nn i<CR><ESC>
+nnoremap <leader>nn i<CR><ESC>
 " insert \n at the beginnig of a line
-nmap <leader>NN I<CR><ESC>
+nnoremap <leader>NN I<CR><ESC>
 
 " place swap-files to some directory
 set backupdir=.backup/,~/.backup/,/tmp//
@@ -158,13 +158,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " NerdTree настройки
 " показать NERDTree на F3
-map <F3> :NERDTreeToggle<CR>
+noremap <F3> :NERDTreeToggle<CR>
 "игноррируемые файлы с расширениями
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
 " TagBar настройки
 " F4 для структуры файла
-map <F4> :TagbarToggle<CR>
+noremap <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1 " автофокус на Tagbar при открытии
 
 " vim surround:
@@ -176,10 +176,10 @@ let g:tagbar_autofocus = 1 " автофокус на Tagbar при открыт�
 let g:snippets_dir = "~/.vim/vim-snippets/snippets"
 
 " TaskList настройки
-map <F2> :TaskList<CR>
+noremap <F2> :TaskList<CR>
 
 " Работа буфферами
-map <C-q> :bd<CR>
+noremap <C-q> :bd<CR>
 
 " при переходе за границу в 80 символов в Ruby/Python/js/C/C++ подсвечиваем на темном фоне текст
 "(does not work, but do I really need it? That is a question)
@@ -231,23 +231,23 @@ set showtabline=2
 set guioptions-=e
 
 " run command in another tmux pane
-map <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
 
 " git diff changes in runtime
 let g:signify_realtime = 1
 
 " jump to next git change
-nmap <leader>gj <plug>(signify-next-hunk)
+nnoremap <leader>gj <plug>(signify-next-hunk)
 " jump to previous git change
-nmap <leader>gk <plug>(signify-prev-hunk)
+nnoremap <leader>gk <plug>(signify-prev-hunk)
 
 " disable auto deletion of spaces
 let g:pymode_trim_whitespaces = 0
 
 " hotkey for enabling pymode lint
-nmap <leader>lnt :let g:pymode_lint=1<CR>
+nnoremap <leader>lnt :let g:pymode_lint=1<CR>
 " hotkey for disabling pymode lint
-nmap <leader>nolnt :let g:pymode_lint=0<CR>
+nnoremap <leader>nolnt :let g:pymode_lint=0<CR>
 
 " black left column with pretty colored marks
 hi SignColumn ctermbg=none
@@ -291,12 +291,15 @@ nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 
-autocmd Filetype html setlocal ts=4 sw=4 sts=0 expandtab
+augroup html_indentation
+	autocmd!
+	autocmd Filetype html setlocal ts=4 sw=4 sts=0 expandtab
+augroup END
 
 " translation
-vmap <leader>T <Plug>Translate
-vmap <leader>R <Plug>TranslateReplace
-vmap <leader>P <Plug>TranslateSpeak
+vnoremap <leader>T <Plug>Translate
+vnoremap <leader>R <Plug>TranslateReplace
+vnoremap <leader>P <Plug>TranslateSpeak
 
 let g:translate_cmd="trans :ru"
 
@@ -314,3 +317,8 @@ inoremap <C-U> <Esc>d0xi
 inoremap <C-Y> <Esc>Pa
 inoremap <C-X><C-S> <Esc>:w<CR>a
 inoremap <M-f> <Esc>lwi
+
+" edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
