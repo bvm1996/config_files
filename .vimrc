@@ -322,3 +322,11 @@ inoremap <M-f> <Esc>lwi
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " source vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" map common operator movements
+" delete in parantheses
+onoremap p i(
+" delete in next parantheses
+onoremap in( :<c-u>normal! f(vi(<cr>
+" delete in last parantheses
+onoremap il( :<c-u>normal! F)vi(<cr>
