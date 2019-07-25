@@ -268,7 +268,7 @@ function! DefsplitFun()
 	execute "normal! ^f(ci(\<enter>\<tab>".join(lines, ",\<enter>\<tab>").",\<enter>\<esc>"
 endfunction
 
-command Defsplit call DefsplitFun()
+command! Defsplit call DefsplitFun()
 
 " open new tab
 nnoremap <silent> <leader>tt :$tabnew<CR>
