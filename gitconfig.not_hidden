@@ -4,6 +4,7 @@
 	co = checkout
 	sl = stash list
 	sa = stash apply
+	subupd = submodule update --init --recursive
 [diff]
 	tool = vimdiff
 [difftool]
