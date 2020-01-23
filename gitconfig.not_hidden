@@ -1,6 +1,12 @@
 [alias]
-	graph = log --graph --date-order --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date=short
+	graph = log --graph --date-order --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date=short --all
+	review = push gerrit @:refs/for/master
+	co = checkout
+	sl = stash list
+	sa = stash apply
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
+[credential]
+	helper = cache
