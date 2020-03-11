@@ -1,6 +1,8 @@
 [alias]
 	graph = log --graph --date-order --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date=short --all
 	review = push gerrit @:refs/for/master
+	hash = show --pretty='<%H> %s' -s
+	name = show --name-only
 	co = checkout
 	sl = stash list
 	sa = stash apply
