@@ -79,3 +79,6 @@ export VISUAL=$(which vim)
 
 # enable emacs-mode
 bindkey -e
+
+# enable comments
+setopt interactivecomments
