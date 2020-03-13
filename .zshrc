@@ -39,8 +39,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #my aliases
 alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -lh'
+alias la='ls -lah'
 #alias dir='dir --color=auto'
 #alias vdir='vdir --color=auto'
 
