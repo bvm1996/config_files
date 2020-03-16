@@ -56,6 +56,8 @@ source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias -g g='| grep'
 
+alias hosts='cat /etc/hosts'
+
 alias gst='git status'
 alias grupd='git remote update'
 alias gg='git graph'
