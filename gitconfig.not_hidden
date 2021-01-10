@@ -8,6 +8,8 @@
 	sa = stash apply
 	subupd = submodule update --init --recursive
 	st = status
+	sh = show
+	gr = graph
 [diff]
 	tool = vimdiff
 [difftool]
