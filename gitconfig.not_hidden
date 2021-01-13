@@ -7,10 +7,16 @@
 	co = checkout
 	sl = stash list
 	sa = stash apply
+	ss = stash show
 	subupd = submodule update --init --recursive
 	st = status
 	sh = show
 	br = branch
+	upd = remote update
+	cpk = cherry-pick
+	todo = grep -n TODO
+	pdb = grep -in pdb
+	changed = diff --stat --name-only
 [diff]
 	tool = vimdiff
 [difftool]
