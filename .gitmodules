@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/grep"]
 	path = .vim/bundle/grep
 	url = https://github.com/yegappan/grep.git
+[submodule ".vim/bundle/vim-translator"]
+	path = .vim/bundle/vim-translator
+	url = https://github.com/voldikss/vim-translator.git
