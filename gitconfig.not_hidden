@@ -1,5 +1,6 @@
 [alias]
 	graph = log --graph --date-order --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date=short --all
+	gr = log --graph --date-order --pretty=format:\"<%h> %ad %Cgreen%d%Creset %s [%an]\" --date=short --all
 	review = push gerrit @:refs/for/master
 	hash = show --pretty='<%H> %s' -s
 	name = show --name-only
@@ -9,7 +10,7 @@
 	subupd = submodule update --init --recursive
 	st = status
 	sh = show
-	gr = graph
+	br = branch
 [diff]
 	tool = vimdiff
 [difftool]
