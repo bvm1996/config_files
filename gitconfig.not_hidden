@@ -23,3 +23,5 @@
 	prompt = false
 [credential]
 	helper = cache
+[grep]
+	lineNumber = true
